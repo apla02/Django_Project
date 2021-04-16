@@ -1,0 +1,23 @@
+1. Create your folder with the name of your project
+    eg. Django_project
+2. Create the virtual environment
+    environmentpython -m venv ~/.virtualenvs/django(this path allows the new environment set in a diferente path)
+3. Activate your environment
+    source ~/.virtualenvs/django/bin/activate
+4. Install django-3.2 
+    pip install django
+5. Install all of the requeriments
+    pip freeze > requeriments.text
+6. Create a new project
+    django-admin startproject project
+7. Run the new project
+    cd . Django_project/project => python manage.py runserser
+8. Create a new poll aplication (django can handle many aplications on side it)
+    python manage.py startapp poll_app
+9. open the folder that contains the squeleton of the application
+    cd poll_app
+10. 
+
+
+to stop a process that is currently in use
+    sudo lsof -t -i tcp:8000 | xargs kill -9
