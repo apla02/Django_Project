@@ -16,7 +16,50 @@
     python manage.py startapp poll_app
 9. open the folder that contains the squeleton of the application
     cd poll_app
-10. 
+10. create a new file "urls.py" that include all of app's views
+    import:
+    from django.shortcuts import render
+    from django.http import HttpResponse and then:
+    start to create your views
+11. Go to the file urls.py inside the project ( project folder) and include the path of the app's views
+12.Go to the view file and include the new views linked to the urlpattern defined in the poll_app.url module
+13. SET UP YOUR MODELS
+    - Go to the setting file, inside your project and include your app in installed_apps
+    - Be sure your ORM program is properly configured
+    - create the models of you ORM, each model represents a table of  a database
+    - make the migrations to sqlite => python manage.py migrate and then => python manage.py makemigratations
+    - you can see the information of the tables taht were created => cat poll_app/migrations/0001_initial.py
+    - python manage.py sqlmigrate poll_app 0001
+    - python manage.py migrate
+    - you can add new record to models using a shell inside the Django:
+        python manage shell => this deploy a interactive command:
+        >>> from poll_app.models import Question, Choice
+        >>> Question.objects.all() database doesn't  have any record yet
+        >>> from django.utils import timezone
+        >>> from django.utils import timezone
+        >>> q1 = Question(question_text="What is your favorite programming language?", published_date=timezone.now())
+        >>> q1
+        <Question: What is your favorite programming language?>
+        >>> vars(q1)
+        {'_state': <django.db.models.base.ModelState object at 0x7f610a424ac0>, 'id': None, 'question_text': 'What is your favorite programming language?', 'published_date': datetime.datetime(2021, 4, 16, 20, 46, 38, 16808, tzinfo=<UTC>)}
+        >>> q1.published_date
+        datetime.datetime(2021, 4, 16, 20, 46, 38, 16808, tzinfo=<UTC>)
+        >>>q.save()
+        >>> q = Question.objects.all()[0]
+        >>> q.published_recently()
+14. CREATE A SUPERUSER
+    - this user hand the admin 
+        python manage.py createsuperuser
+        import the models in the admin module
+            -
+
+
+
+
+
+
+
+
 
 
 to stop a process that is currently in use
